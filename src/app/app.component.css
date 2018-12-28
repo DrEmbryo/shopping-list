@@ -1,0 +1,26 @@
+.navigation {
+    display: grid;
+    padding: 0 20%;
+    grid-template-columns: 2fr 2fr 4fr;
+    background-color: #e0e0e0;
+    height: 70px;
+}
+
+.navigation div {
+    justify-self: center;
+    align-self: center; 
+    color: #8a8a8a;
+    transition: color 250ms linear;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 31px;
+}
+
+.navigation div:hover {
+    color: #414141;
+    transition: color 250ms linear;
+}
+
+.content {
+    margin: 0 20%;
+}
