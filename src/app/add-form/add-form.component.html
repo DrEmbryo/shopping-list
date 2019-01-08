@@ -1,0 +1,18 @@
+<div class="form_container">
+   <div class="form">
+      <input type="text" placeholder="rice" [formControl]="item">
+      <input type="text" placeholder="1" [formControl]="amount">
+   </div>
+   <div class="form_btns">
+      <div class="add_btn" (click)="addItem()"> add </div>
+      <div class="add_btn" (click)="clearItems()"> clear </div>
+   </div>
+   
+</div>
+
+<div *ngFor="let item of itemArray" class="">
+   <div class="list_item">
+      <div>{{item.item}}</div>
+      <div>{{item.amount}}</div>
+   </div>
+</div>
