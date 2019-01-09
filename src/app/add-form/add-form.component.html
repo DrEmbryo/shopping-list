@@ -1,18 +1,53 @@
-<div class="form_container">
-   <div class="form">
-      <input type="text" placeholder="rice" [formControl]="item">
-      <input type="text" placeholder="1" [formControl]="amount">
-   </div>
-   <div class="form_btns">
-      <div class="add_btn" (click)="addItem()"> add </div>
-      <div class="add_btn" (click)="clearItems()"> clear </div>
-   </div>
-   
+<div class="controls">
+      <i class="fas fa-plus-square" (click)="controlSwitch('form')" 
+      [ngClass]="{'controls_active':controls === 'form'}"></i>
+
+      <i class="fas fa-search" (click)="controlSwitch('search')" 
+      [ngClass]="{'controls_active':controls === 'search'}"></i>
+
+      <i class="fas fa-minus-square" (click)="controlSwitch('hide')"></i>
 </div>
 
-<div *ngFor="let item of itemArray" class="">
-   <div class="list_item">
-      <div>{{item.item}}</div>
-      <div>{{item.amount}}</div>
+<div [ngSwitch]="controls" class="controls_wrapper">
+
+   <div *ngSwitchCase="'form'">
+      <div class="form">
+         <input type="text" placeholder="item name" [formControl]="item">
+         <input type="text" placeholder="0" [formControl]="amount">
+      </div>
+      <div class="form_btns">
+         <div class="add_btn" (click)="addItem()"> add </div>
+         <div class="add_btn" (click)="clearForm()"> clear </div>
+      </div>
+      
    </div>
+   
+   <div class="list_search" *ngSwitchCase="'search'">
+      <input type="text" placeholder="search" [formControl]="search">
+      <div class="add_btn" style="width: auto;" (click)="onSearch()"> search </div>
+   </div>
+
+   <div *ngSwitchCase="'hide'">
+   </div>
+
+</div>
+
+<div class="list_display">
+   <div class="list_head">
+      <div>Item</div>
+      <div>Amount</div>
+   </div>
+   <div *ngFor="let item of itemArray; index as i;" class="list">
+      <div class="list_item">
+         <div>{{item.item}}</div>
+         <div class="list_item_amount">
+            <div>{{item.amount}}</div>
+            <div class="delete-btn" (click)="deleteItem(i)"><i class="far fa-trash-alt"></i></div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="">
+   <div class="add_btn" (click)="clearItems()"> clear </div>
 </div>
