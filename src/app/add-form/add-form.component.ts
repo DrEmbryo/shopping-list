@@ -10,11 +10,11 @@ export class AddFormComponent implements OnInit {
 
   constructor() { }
 
+  key = 'items';
   item = new FormControl('');
   search = new FormControl('');
   amount = new FormControl('');
   package = new FormControl('');
-  key = 'items' ;
   packages = [
     {type: 'box'},
     {type: 'jar'},

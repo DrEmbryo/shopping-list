@@ -38,14 +38,14 @@
 </div>
 
 <div class="list_display">
-   <div class="list_head">
+<div class="list_head">
       <div>Item</div>
       <div>Amount</div>
    </div>
-   <div *ngFor="let item of itemArray; index as i;" class="list">
-      <div class="list_item">
-         <div>{{item.item}}</div>
-         <div class="list_item_amount">
+   <div class="list_inner">
+      <div *ngFor="let item of itemArray; index as i;" class="list">
+         <div class="list_item">
+            <div>{{item.item}}</div>
             <div>{{item.amount}}</div>
             <div>{{item.package}}</div>
             <div class="delete-btn" (click)="deleteItem(i)"><i class="far fa-trash-alt"></i></div>
