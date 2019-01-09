@@ -13,7 +13,17 @@ export class AddFormComponent implements OnInit {
   item = new FormControl('');
   search = new FormControl('');
   amount = new FormControl('');
+  package = new FormControl('');
   key = 'items' ;
+  packages = [
+    {type: 'box'},
+    {type: 'jar'},
+    {type: 'bottle'},
+    {type: 'tuba'},
+    {type: 'glass'},
+    {type: 'ampoule'},
+    {type: 'package'},
+  ];
 
   itemArray = [];
   controls = '';
@@ -23,6 +33,7 @@ export class AddFormComponent implements OnInit {
       this.itemArray.push({
         item: this.item.value,
         amount: this.amount.value,
+        package: this.package.value,
       });
       this.saveItems();
       this.clearForm();

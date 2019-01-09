@@ -14,6 +14,11 @@
       <div class="form">
          <input type="text" placeholder="item name" [formControl]="item">
          <input type="text" placeholder="0" [formControl]="amount">
+         <select [formControl]="package">
+            <option *ngFor="let package of packages">  
+               {{package.type}}             
+            </option>
+         </select>
       </div>
       <div class="form_btns">
          <div class="add_btn" (click)="addItem()"> add </div>
@@ -42,6 +47,7 @@
          <div>{{item.item}}</div>
          <div class="list_item_amount">
             <div>{{item.amount}}</div>
+            <div>{{item.package}}</div>
             <div class="delete-btn" (click)="deleteItem(i)"><i class="far fa-trash-alt"></i></div>
          </div>
       </div>
