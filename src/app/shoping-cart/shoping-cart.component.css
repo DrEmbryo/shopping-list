@@ -1,0 +1,37 @@
+.cart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    margin-top: 15px;
+}
+
+.block-header {
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #222222;
+    color: #fafafa;
+    text-align: center;
+    font: 26px arial,sans-serif;
+    border-bottom: 3px solid #797979;
+}
+
+.block-card-inner {
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    font: 26px arial,sans-serif;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.block-card {
+    background-color:  #cccccc;
+}
+
+.block-card:nth-child(even) {
+    background-color:  #ebebeb;
+}
+
+.block-card :hover {
+    background-color:  #4b4b4b;
+    color: #fafafa;
+}

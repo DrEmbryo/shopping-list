@@ -17,6 +17,7 @@ export class AddFormComponent implements OnInit {
   package = new FormControl('');
   packages = [
     {type: 'box'},
+    {type: 'pack'},
     {type: 'jar'},
     {type: 'bottle'},
     {type: 'tuba'},
@@ -84,12 +85,12 @@ export class AddFormComponent implements OnInit {
     } else {
       this.searchArray = [];
     }
-    this.searchBar.setValue('');
   }
 
   ngOnInit() {
     if (JSON.parse(localStorage.getItem(this.key)) !== null) {
       this.itemArray = JSON.parse(localStorage.getItem(this.key));
       }
+      this.package.setValue(this.packages[0].type);
     }
   }

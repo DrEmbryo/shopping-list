@@ -1,3 +1,27 @@
-<p>
-  shoping-cart works!
-</p>
+<div class="cart-grid">
+  <div>
+    <div class="block-header">
+      <h3>need to buy</h3>
+    </div>
+    <div *ngFor="let item of itemToBuy; index as i;" class="block-card" (click)="moveToCart(i)">
+      <div class="block-card-inner">
+        <div>{{item.item}}</div>
+        <div>{{item.amount}}</div>
+        <div>{{item.package}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="block-header">
+      <h3>in cart</h3>
+    </div>
+    <div *ngFor="let item of itemInCart; index as i;" class="block-card" (click)="moveToBuy(i)">
+      <div class="block-card-inner">
+        <div>{{item.item}}</div>
+        <div>{{item.amount}}</div>
+        <div>{{item.package}}</div>
+      </div>
+    </div>
+  </div>
+</div>
