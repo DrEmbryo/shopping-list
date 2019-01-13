@@ -66,11 +66,6 @@ export class AddFormComponent implements OnInit {
 
   controlSwitch(val) {
     this.controls = val;
-    if (val === 'search') {
-      this.search = true ;
-    } else {
-      this.search = false ;
-    }
   }
 
   onSearch () {
