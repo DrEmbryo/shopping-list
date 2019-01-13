@@ -1,5 +1,14 @@
-<div class="cart-grid">
-  <div>
+<div class="cart_controls">
+    <i class="fas fa-clipboard-list" (click)="controlSwitch('need')" 
+    [ngClass]="{'controls_active':controls === 'need'}"></i>
+
+    <i class="fas fa-shopping-bag" (click)="controlSwitch('cart')" 
+    [ngClass]="{'controls_active':controls === 'cart'}"></i>
+
+</div>
+
+<div [ngSwitch]="controls" class="cart-grid">
+  <div *ngSwitchCase="'need'">
     <div class="block-header">
       <h3>need to buy</h3>
     </div>
@@ -12,7 +21,7 @@
     </div>
   </div>
 
-  <div>
+  <div *ngSwitchCase="'cart'">
     <div class="block-header">
       <h3>in cart</h3>
     </div>

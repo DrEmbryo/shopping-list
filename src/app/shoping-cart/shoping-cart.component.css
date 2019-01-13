@@ -1,7 +1,29 @@
+.cart_controls {
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    color:#d1d1d1;
+    cursor: pointer;
+    position: absolute;
+    top: 75px;
+    left: 10px;
+}
+
+.cart_controls i {
+    margin-bottom: 10px;
+}
+
+.cart_controls i:hover {
+    color: #686868;
+}
+
+.controls_active {
+    color: #363636;
+}
+
 .cart-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
+    grid-template-columns: 1fr;
     margin-top: 15px;
 }
 
@@ -34,4 +56,19 @@
 .block-card :hover {
     background-color:  #4b4b4b;
     color: #fafafa;
+}
+
+@media only screen and (max-width:768px) {
+    .cart_controls {
+        position: relative;
+        top: auto;
+        left: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 15px;
+    }
+
+    .cart_controls i {
+        margin-bottom: 0px;
+    }
 }

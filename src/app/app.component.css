@@ -24,3 +24,13 @@
 .content {
     margin: 0 20%;
 }
+
+
+@media only screen and (max-width:768px) {
+    .content {
+        margin: 0 10px;
+    }
+    .navigation {
+        padding: 0 10px;
+    }
+}

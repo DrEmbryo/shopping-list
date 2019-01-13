@@ -11,6 +11,12 @@ export class ShopingCartComponent implements OnInit {
 
   itemInCart = [] ;
   itemToBuy = [] ;
+  controls = 'need';
+
+  controlSwitch(val) {
+    this.controls = val;
+  }
+
 
   moveToCart(i) {
     this.itemInCart.push(this.itemToBuy[i]);
