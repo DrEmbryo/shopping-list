@@ -28,8 +28,7 @@ export class AddFormComponent implements OnInit {
 
   itemArray = [];
   searchArray = [];
-  search = false;
-  controls = '';
+  controls = 'hide';
 
   addItem() {
     if (this.item.value !== '' && this.amount.value !== '') {
