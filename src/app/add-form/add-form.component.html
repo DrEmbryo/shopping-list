@@ -28,7 +28,7 @@
    </div>
    
    <div class="list_search" *ngSwitchCase="'search'">
-      <input type="text" placeholder="search" [formControl]="search">
+      <input type="text" placeholder="search" [formControl]="searchBar">
       <div class="add_btn" style="width: auto;" (click)="onSearch()"> search </div>
    </div>
 
@@ -41,9 +41,21 @@
 <div class="list_head">
       <div>Item</div>
       <div>Amount</div>
+      <div>Type</div>
    </div>
-   <div class="list_inner">
+   <div class="list_inner" *ngIf="!search">
       <div *ngFor="let item of itemArray; index as i;" class="list">
+         <div class="list_item">
+            <div>{{item.item}}</div>
+            <div>{{item.amount}}</div>
+            <div>{{item.package}}</div>
+            <div class="delete-btn" (click)="deleteItem(i)"><i class="far fa-trash-alt"></i></div>
+         </div>
+      </div>
+   </div>
+
+   <div class="list_inner" *ngIf="search">
+      <div *ngFor="let item of searchArray; index as i;" class="list">
          <div class="list_item">
             <div>{{item.item}}</div>
             <div>{{item.amount}}</div>

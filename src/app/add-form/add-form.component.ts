@@ -12,7 +12,7 @@ export class AddFormComponent implements OnInit {
 
   key = 'items';
   item = new FormControl('');
-  search = new FormControl('');
+  searchBar = new FormControl('');
   amount = new FormControl('');
   package = new FormControl('');
   packages = [
@@ -26,6 +26,8 @@ export class AddFormComponent implements OnInit {
   ];
 
   itemArray = [];
+  searchArray = [];
+  search = false;
   controls = '';
 
   addItem() {
@@ -64,9 +66,25 @@ export class AddFormComponent implements OnInit {
 
   controlSwitch(val) {
     this.controls = val;
+    if (val === 'search') {
+      this.search = true ;
+    } else {
+      this.search = false ;
+    }
   }
 
   onSearch () {
+    this.searchArray = [];
+    if (this.searchBar.value !== '') {
+      for (let i = 0; i < this.itemArray.length; i++) {
+        if (this.searchBar.value === this.itemArray[i].item) {
+            this.searchArray.push(this.itemArray[i]);
+        }
+      }
+    } else {
+      this.searchArray = [];
+    }
+    this.searchBar.setValue('');
   }
 
   ngOnInit() {
